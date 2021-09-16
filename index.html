@@ -8,6 +8,29 @@
   
   }
   
+  .header{
+    width:100%; 
+    height:100px;
+    background-color:#172F38";
+  }
+    
+  .header:after{
+    clear:both;
+  }
+    
+  .logo{
+    float:left;
+    margin-left:40px; 
+    margin-top:20px; 
+    width: 180px;
+    height:100px;
+  }
+    
+  .logo img{
+    width:180px; 
+    height:50px;
+  }
+    
   .menu div{
     display:inline;
     width:100px;
@@ -18,21 +41,20 @@
     background-color: red;
   }
   
-  .clearall {clear:both}
+  .clearall:after {clear:both}
   
   </style>
   </head>
   
   <body>
    <div style="width:100%">
-     <div class="header" style="width:100%; background-color:#172F38">
-      <div class="logo" style="float:left; width:200px; height:50px">
+     <div class="header">
+      <div class="logo">
         <a href="#"><img src="images/menu%20logo@2x.png"></a>
       </div>
       <div class="menu" style="float:right">
         <div><a href="#">PRAY2</a></div><div><a href="#">PROMOTE</a></div><div><a href="#">DETAILS</a></div><div><a href="#">REGISTER</a></div>
       </div>
-       <div class="clearall"></div>
      </div>
    </div>
   </body>
