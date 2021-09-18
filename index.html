@@ -75,6 +75,15 @@
     
   .featured after::{clear:both;}
    
+   .video{
+    text-align:center; 
+    margin:0 auto; 
+    background-image:url('images/summit%20background%20logo@2x.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+    
    p{
     font-size:22px;
     }
@@ -207,23 +216,23 @@
      </div>
 
      <!-- Video -->
-     <div style="text-align:center; margin:0 auto">
-     <video width="748" height="419" controls autoplay>
-     <source src="banner.720.mp4" type="video/mp4">
-     Your browser does not support the video tag.
-     </video>
-     <br/>
-     <h1>WHAT IS TWMS?</h1>
-     <p class="whitefont center">National Chi Alpha, in partnership with Assemblies of God World Missions, will host a strategic gathering of 5,000+ participants January 7-9, 2021 in St. Louis, Missouri that will focus strictly on God’s mission to reach the lost around the globe. This historic gathering is comprised of five primary components.</p>
+     <div class="video"> 
+       <div style="text-align:center; margin:0 auto">
+       <video width="748" height="419" controls autoplay>
+       <source src="banner.720.mp4" type="video/mp4">
+       Your browser does not support the video tag.
+       </video>
+       <br/>
+       <h1>WHAT IS TWMS?</h1>
+       <p class="whitefont center">National Chi Alpha, in partnership with Assemblies of God World Missions, will host a strategic gathering of 5,000+ participants January 7-9, 2021 in St. Louis, Missouri that will focus strictly on God’s mission to reach the lost around the globe. This historic gathering is comprised of five primary components.</p>
+       </div>
      </div>
     
-      <div>
+     <div>
       <p class="p1">WHAT TO EXPECT</p>
       <p class="whitefont center">National Chi Alpha, in partnership with Assemblies of God World Missions, will host a strategic gathering of 5,000+ participants January 7-9, 2021 in St. Louis, Missouri that will focus strictly on God’s mission to reach the lost around the globe. This historic gathering is comprised of five primary components.</p>
-      <?php echo "hey" ?>
-
-
-</div>
+     </div>
+    
    </div>
   </body>
 </html>
