@@ -76,6 +76,19 @@
     color:#E3E4E4;
    }
     
+   #countdown li {
+    display: inline-block;
+    font-size: 1.5em;
+    list-style-type: none;
+    padding: 1em;
+    text-transform: uppercase;
+   }
+
+    #countdown li span {
+      display: block;
+      font-size: 4.5rem;
+    }
+    
   .prevideosection{
     position: absolute;
     /*top: 13.25%; */
@@ -431,6 +444,16 @@
        <div style="float:right; text-align:center; width:5%; padding-top:18vh">
        <p class="welivemissions">#WELIVEMISSIONS</p>
        </div>
+        
+       <div id="countdown">
+         <p id="cntdwn">COUNTDOWN TO THE SUMMIT</p>
+         <ul>
+           <li><span id="days"></span>days</li>
+           <li><span id="hours"></span>Hours</li>
+           <li><span id="minutes"></span>Minutes</li>
+           <li><span id="seconds"></span>Seconds</li>
+        </ul>
+        </div>
       </div>
      
        <div style="clear:both"></div>
@@ -585,34 +608,39 @@
    </div>
 
 <script>
-// Set the date we're counting down to
-var countDownDate = new Date("Jan 7, 2022 19:00").getTime();
+(function () {
+  const second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24;
 
-// Update the count down every 1 second
-var x = setInterval(function() {
+  let birthday = "Sep 30, 2021 00:00:00",
+      countDown = new Date(birthday).getTime(),
+      x = setInterval(function() {    
 
-  // Get today's date and time
-  var now = new Date().getTime();
-    
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
-    
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-  // Output the result in an element with id="demo"
-  document.getElementById("cntdwn").innerHTML = days + " DAYS " + hours + " HOURS "
-  + minutes + " MINUTES " + seconds + " SECONDS ";
-    
-  // If the count down is over, write some text 
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("cntdwn").innerHTML = " ";
-  }
-}, 1000);
+        let now = new Date().getTime(),
+            distance = countDown - now;
+
+        document.getElementById("days").innerText = Math.floor(distance / (day)),
+          document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+          document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+          document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+
+        //do something later when date is reached
+        if (distance < 0) {
+          let headline = document.getElementById("headline"),
+              countdown = document.getElementById("countdown"),
+              content = document.getElementById("content");
+
+          headline.innerText = "It's my birthday!";
+          countdown.style.display = "none";
+          content.style.display = "block";
+
+          clearInterval(x);
+        }
+        //seconds
+      }, 0)
+  }());
 </script>
 
   </body>
