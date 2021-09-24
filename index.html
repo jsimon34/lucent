@@ -68,6 +68,20 @@
     background-position: center;
     background-size: cover;
   } 
+    
+  .featured img {
+    -webkit-animation: bounce 2s;
+    animation: bounce 2s;
+}
+
+/* Scroll down indicator (bouncing) */
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0); }
+  40% {
+    -webkit-transform: translateY(-30px); }
+  60% {
+    -webkit-transform: translateY(-15px); } }
    
    #cntdwn{
     text-align: center;
