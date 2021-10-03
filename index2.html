@@ -45,6 +45,7 @@
     float:right; 
     margin-right:46px;
     height:50px;
+    overflow:hidden;
   }
     
   .menu div{
@@ -62,6 +63,18 @@
   
   .menu div:hover{
     background-color: #EF514C;
+  }
+    
+   .menu .icon{
+    display:none;
+    }
+    
+  @media screen and (max-width: 713px) {
+   .menu div a:not(:first-child) {display: none;}
+   .menu div a.icon {
+      float: right;
+      display: block;
+   }
   }
     
   @media screen and (max-width: 713px) {
@@ -509,6 +522,7 @@ function myFunction() {
         <div><a href="#">PROMOTE</a></div>
         <div><a href="#">DETAILS</a></div>
         <div><a href="#">REGISTER</a></div>
+        <div><a href="javascript:void(0);" class="icon" onclick="myFunction()"> <i class="fa fa-bars"></i></a></div>
       </nav>
      </header>
      
